@@ -20,6 +20,7 @@ let tableItem = -1;
 
 let dropdown_click = d3.select(".first");
 let dropdown_click2 = d3.select(".second");
+let dropdown_click3 = d3.select(".third");
 
 dropdown_click.on("click", function()
 {
@@ -41,16 +42,18 @@ dropdown_click2.on("click", function()
     d3.select(".check-input").text("");
     tableItem = 1;
 });
+dropdown_click3.on("click", function()
+{
+    d3.select("input").attr("placeholder", "Enter a state");
+    d3.select(".form-control").property("value", "");
+    dropdown_click.style("background-color", "transparent");
+    dropdown_click2.style("background-color", "#DF691A");
+    d3.select("#dropdownMenuButton").style("background-color", "cornflowerblue");
+    d3.select(".check-input").text("");
+    tableItem = 2;
+});
 
 let old_tbody = document.getElementsByTagName("table")[0];
-
-// ---------------------------------------------
-// inputSearch = "1/1/2010";
-// inputSearch2 = "01/1/2010";
-// let a = new Date(inputSearch);
-// let b = new Date(inputSearch2);
-// console.log(a.getTime() === b.getTime());
-// ---------------------------------------------
 
 // Append data array of objects to html table only first time
 let tempTable = document.getElementsByTagName("table")[0];
