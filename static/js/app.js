@@ -278,7 +278,7 @@ submit.on("click", function()
         // Loops through table data and appends new rows if the data date matches the input
         for (let i = 0; i < tableData.length; i++)
         {
-            if (tableData[i].state === inputSearch)
+            if (tableData[i].country === inputSearch)
             {
                 set = true;
                 let newRow = tempTable.insertRow(1);
@@ -317,7 +317,7 @@ submit.on("click", function()
         // Loops through table data and appends new rows if the data date matches the input
         for (let i = 0; i < tableData.length; i++)
         {
-            if (tableData[i].state === inputSearch)
+            if (tableData[i].shape === inputSearch)
             {
                 set = true;
                 let newRow = tempTable.insertRow(1);
