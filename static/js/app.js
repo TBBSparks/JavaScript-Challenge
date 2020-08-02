@@ -21,6 +21,8 @@ let tableItem = -1;
 let dropdown_click = d3.select(".first");
 let dropdown_click2 = d3.select(".second");
 let dropdown_click3 = d3.select(".third");
+let dropdown_click4 = d3.select(".fourth");
+let dropdown_click5 = d3.select(".fifth");
 
 dropdown_click.on("click", function()
 {
@@ -161,7 +163,7 @@ submit.on("click", function()
                 cell6.innerHTML = tableData[i].comments;
             }
         }
-        d3.select(".check-input").text("Found all matching dates.");
+        d3.select(".check-input").text("Found matching dates.");
     }
     if (tableItem === 1)
     {
@@ -200,6 +202,7 @@ submit.on("click", function()
                 cell6.innerHTML = tableData[i].comments;
             }
         }
+        d3.select(".check-input").text("Found matching cities.");
     }
     if (tableItem === 2)
     {
@@ -238,5 +241,84 @@ submit.on("click", function()
                 cell6.innerHTML = tableData[i].comments;
             }
         }
+        d3.select(".check-input").text("Found matching states.");
+    }
+    if (tableItem === 3)
+    {
+        // Check if input is already in the table
+        let tempTable = document.getElementsByTagName("table")[0];
+        for (let i = 1; i < tempTable.rows.length; i++)
+        {
+            if (tempTable.rows.item(i).cells.item(3).innerHTML === inputSearch)
+            {
+                console.log("UFO sighting(s) already in table!")
+                return;
+            }
+        }
+        // Loops through table data and appends new rows if the data date matches the input
+        for (let i = 0; i < tableData.length; i++)
+        {
+            if (tableData[i].state === inputSearch)
+            {
+                set = true;
+                let newRow = tempTable.insertRow(1);
+
+                let cell0 = newRow.insertCell(0);
+                let cell1 = newRow.insertCell(1);
+                let cell2 = newRow.insertCell(2);
+                let cell3 = newRow.insertCell(3);
+                let cell4 = newRow.insertCell(4);
+                let cell5 = newRow.insertCell(5);
+                let cell6 = newRow.insertCell(6);
+                
+                cell0.innerHTML = tableData[i].datetime;
+                cell1.innerHTML = tableData[i].city;
+                cell2.innerHTML = tableData[i].state;
+                cell3.innerHTML = tableData[i].country;
+                cell4.innerHTML = tableData[i].shape;
+                cell5.innerHTML = tableData[i].durationMinutes;
+                cell6.innerHTML = tableData[i].comments;
+            }
+        }
+        d3.select(".check-input").text("Found matching countries.");
+    }
+    if (tableItem === 4)
+    {
+        // Check if input is already in the table
+        let tempTable = document.getElementsByTagName("table")[0];
+        for (let i = 1; i < tempTable.rows.length; i++)
+        {
+            if (tempTable.rows.item(i).cells.item(4).innerHTML === inputSearch)
+            {
+                console.log("UFO sighting(s) already in table!")
+                return;
+            }
+        }
+        // Loops through table data and appends new rows if the data date matches the input
+        for (let i = 0; i < tableData.length; i++)
+        {
+            if (tableData[i].state === inputSearch)
+            {
+                set = true;
+                let newRow = tempTable.insertRow(1);
+
+                let cell0 = newRow.insertCell(0);
+                let cell1 = newRow.insertCell(1);
+                let cell2 = newRow.insertCell(2);
+                let cell3 = newRow.insertCell(3);
+                let cell4 = newRow.insertCell(4);
+                let cell5 = newRow.insertCell(5);
+                let cell6 = newRow.insertCell(6);
+                
+                cell0.innerHTML = tableData[i].datetime;
+                cell1.innerHTML = tableData[i].city;
+                cell2.innerHTML = tableData[i].state;
+                cell3.innerHTML = tableData[i].country;
+                cell4.innerHTML = tableData[i].shape;
+                cell5.innerHTML = tableData[i].durationMinutes;
+                cell6.innerHTML = tableData[i].comments;
+            }
+        }
+        d3.select(".check-input").text("Found matching shapes.");
     }
 });
