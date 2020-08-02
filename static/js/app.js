@@ -201,4 +201,42 @@ submit.on("click", function()
             }
         }
     }
+    if (tableItem === 2)
+    {
+        // Check if input is already in the table
+        let tempTable = document.getElementsByTagName("table")[0];
+        for (let i = 1; i < tempTable.rows.length; i++)
+        {
+            if (tempTable.rows.item(i).cells.item(2).innerHTML === inputSearch)
+            {
+                console.log("UFO sighting(s) already in table!")
+                return;
+            }
+        }
+        // Loops through table data and appends new rows if the data date matches the input
+        for (let i = 0; i < tableData.length; i++)
+        {
+            if (tableData[i].state === inputSearch)
+            {
+                set = true;
+                let newRow = tempTable.insertRow(1);
+
+                let cell0 = newRow.insertCell(0);
+                let cell1 = newRow.insertCell(1);
+                let cell2 = newRow.insertCell(2);
+                let cell3 = newRow.insertCell(3);
+                let cell4 = newRow.insertCell(4);
+                let cell5 = newRow.insertCell(5);
+                let cell6 = newRow.insertCell(6);
+                
+                cell0.innerHTML = tableData[i].datetime;
+                cell1.innerHTML = tableData[i].city;
+                cell2.innerHTML = tableData[i].state;
+                cell3.innerHTML = tableData[i].country;
+                cell4.innerHTML = tableData[i].shape;
+                cell5.innerHTML = tableData[i].durationMinutes;
+                cell6.innerHTML = tableData[i].comments;
+            }
+        }
+    }
 });
