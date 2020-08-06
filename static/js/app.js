@@ -1,18 +1,6 @@
 let tableData = data;
 
-console.log("Hello");
-  
-let i = Math.floor(Math.random() * 16777215).toString(16);
-console.log(i);
-d3.select("#myBtn").style("background-color", `#${i}`);
-document.getElementById("tru").onmousemove = function(event) {myFunction(event)};
-
-function myFunction(e) 
-{
-    let i = Math.floor(Math.random() * 16777215).toString(16);
-    d3.select("#myBtn").style("background-color", `#${i}`);
-
-}
+d3.select("#myBtn").style("background-color", `#008CBA`);
 
 let tableItem = -1;
 
