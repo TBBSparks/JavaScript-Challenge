@@ -29,7 +29,7 @@ dropdown_click2.on("click", function()
     d3.select("input").attr("placeholder", "Enter a city");
     d3.select(".form-control").property("value", "");
     dropdown_click.style("background-color", "transparent");
-    dropdown_click2.style("background-color", "#DF691A");
+    dropdown_click2.style("background-color", "#008CBA");
     d3.select("#dropdownMenuButton").style("background-color", "#008CBA");
     d3.select(".check-input").text("");
     tableItem = 1;
@@ -41,7 +41,7 @@ dropdown_click3.on("click", function()
     d3.select("input").attr("placeholder", "Enter a state");
     d3.select(".form-control").property("value", "");
     dropdown_click.style("background-color", "transparent");
-    dropdown_click2.style("background-color", "#DF691A");
+    dropdown_click2.style("background-color", "#008CBA");
     d3.select("#dropdownMenuButton").style("background-color", "#008CBA");
     d3.select(".check-input").text("");
     tableItem = 2;
@@ -53,7 +53,7 @@ dropdown_click4.on("click", function()
     d3.select("input").attr("placeholder", "Enter a country");
     d3.select(".form-control").property("value", "");
     dropdown_click.style("background-color", "transparent");
-    dropdown_click2.style("background-color", "#DF691A");
+    dropdown_click2.style("background-color", "#008CBA");
     d3.select("#dropdownMenuButton").style("background-color", "#008CBA");
     d3.select(".check-input").text("");
     tableItem = 3;
@@ -65,7 +65,7 @@ dropdown_click5.on("click", function()
     d3.select("input").attr("placeholder", "Enter a shape");
     d3.select(".form-control").property("value", "");
     dropdown_click.style("background-color", "transparent");
-    dropdown_click2.style("background-color", "#DF691A");
+    dropdown_click2.style("background-color", "#008CBA");
     d3.select("#dropdownMenuButton").style("background-color", "#008CBA");
     d3.select(".check-input").text("");
     tableItem = 4;
