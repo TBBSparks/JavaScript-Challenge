@@ -1,7 +1,5 @@
-// from data.js
 let tableData = data;
 
-// YOUR CODE HERE!
 console.log("Hello");
   
 let i = Math.floor(Math.random() * 16777215).toString(16);
@@ -13,17 +11,19 @@ function myFunction(e)
 {
     let i = Math.floor(Math.random() * 16777215).toString(16);
     d3.select("#myBtn").style("background-color", `#${i}`);
-    // console.log(x);
+
 }
 
 let tableItem = -1;
 
+//For 5 dropdown filter options
 let dropdown_click = d3.select(".first");
 let dropdown_click2 = d3.select(".second");
 let dropdown_click3 = d3.select(".third");
 let dropdown_click4 = d3.select(".fourth");
 let dropdown_click5 = d3.select(".fifth");
 
+//For date filtering
 dropdown_click.on("click", function()
 {
     d3.select("input").attr("placeholder", "Enter a date");
@@ -34,6 +34,8 @@ dropdown_click.on("click", function()
     d3.select(".check-input").text("");
     tableItem = 0;
 });
+
+//For city filtering
 dropdown_click2.on("click", function()
 {
     d3.select("input").attr("placeholder", "Enter a city");
@@ -44,6 +46,8 @@ dropdown_click2.on("click", function()
     d3.select(".check-input").text("");
     tableItem = 1;
 });
+
+//For state filtering
 dropdown_click3.on("click", function()
 {
     d3.select("input").attr("placeholder", "Enter a state");
@@ -54,6 +58,8 @@ dropdown_click3.on("click", function()
     d3.select(".check-input").text("");
     tableItem = 2;
 });
+
+//For country filtering
 dropdown_click4.on("click", function()
 {
     d3.select("input").attr("placeholder", "Enter a country");
@@ -64,6 +70,8 @@ dropdown_click4.on("click", function()
     d3.select(".check-input").text("");
     tableItem = 3;
 });
+
+//For shape filtering
 dropdown_click5.on("click", function()
 {
     d3.select("input").attr("placeholder", "Enter a shape");
@@ -77,7 +85,7 @@ dropdown_click5.on("click", function()
 
 let old_tbody = document.getElementsByTagName("table")[0];
 
-// Append data array of objects to html table only first time
+
 let tempTable = document.getElementsByTagName("table")[0];
 for (let i = 0; i < tableData.length; i++)
 {
@@ -102,7 +110,7 @@ for (let i = 0; i < tableData.length; i++)
 
 setSearch = false;
  
-// Event handler for filter table button click
+
 let submit = d3.select("#myBtn");
 submit.on("click", function()
 {
@@ -110,21 +118,21 @@ submit.on("click", function()
 
     console.log(tableItem);
 
-    // Check if input is valid
+    
     inputSearch = document.getElementById("datetime").value;
     if (inputSearch === "")
     {
         if (d3.select(".check-input").text() === "")
         {
-            d3.select(".check-input").text("*please enter a vaild input");
+            d3.select(".check-input").text("Input Invalid");
         }
         return;
     }
     else if (tableItem === -1)
     {
-        if (d3.select(".check-input").text() === "" || d3.select(".check-input").text() === "*please enter a vaild input")
+        if (d3.select(".check-input").text() === "" || d3.select(".check-input").text() === "Input Invalid")
         {
-            d3.select(".check-input").text("*please select a category");
+            d3.select(".check-input").text("Select");
         }
         return;
     }
@@ -133,7 +141,7 @@ submit.on("click", function()
         d3.select(".check-input").text("");
     }
 
-    // Clear table data
+    
     if (setSearch === false)
     {
         for (let i = 0; i < tableData.length; i++)
@@ -147,18 +155,18 @@ submit.on("click", function()
 
     if (tableItem === 0)
     {
-        // Check if input is already in the table
+        
         let tempTable = document.getElementsByTagName("table")[0]; 
         for (let i = 1; i < tempTable.rows.length; i++)
         {
             if (tempTable.rows.item(i).cells.item(0).innerHTML === inputSearch)
             {
-                console.log("UFO sighting(s) already in table!")
-                d3.select(".check-input").text("UFO sighting(s) already in table.");
+                console.log("Already In Table!")
+                d3.select(".check-input").text("Already In Table!");
                 return;
             }
         }
-        // Loops through table data and appends new rows if the data date matches the input
+        
         for (let i = 0; i < tableData.length; i++)
         {
             if (tableData[i].datetime === inputSearch)
@@ -183,21 +191,21 @@ submit.on("click", function()
                 cell6.innerHTML = tableData[i].comments;
             }
         }
-        d3.select(".check-input").text("Found matching dates.");
+        d3.select(".check-input").text("Matching dates.");
     }
     if (tableItem === 1)
     {
-        // Check if input is already in the table
+        
         let tempTable = document.getElementsByTagName("table")[0];
         for (let i = 1; i < tempTable.rows.length; i++)
         {
             if (tempTable.rows.item(i).cells.item(1).innerHTML === inputSearch)
             {
-                console.log("UFO sighting(s) already in table!")
+                console.log("Already In Table!")
                 return;
             }
         }
-        // Loops through table data and appends new rows if the data date matches the input
+        
         for (let i = 0; i < tableData.length; i++)
         {
             if (tableData[i].city === inputSearch)
@@ -222,21 +230,21 @@ submit.on("click", function()
                 cell6.innerHTML = tableData[i].comments;
             }
         }
-        d3.select(".check-input").text("Found matching cities.");
+        d3.select(".check-input").text("Matching cities.");
     }
     if (tableItem === 2)
     {
-        // Check if input is already in the table
+        
         let tempTable = document.getElementsByTagName("table")[0];
         for (let i = 1; i < tempTable.rows.length; i++)
         {
             if (tempTable.rows.item(i).cells.item(2).innerHTML === inputSearch)
             {
-                console.log("UFO sighting(s) already in table!")
+                console.log("Already In Table!")
                 return;
             }
         }
-        // Loops through table data and appends new rows if the data date matches the input
+        
         for (let i = 0; i < tableData.length; i++)
         {
             if (tableData[i].state === inputSearch)
@@ -261,21 +269,21 @@ submit.on("click", function()
                 cell6.innerHTML = tableData[i].comments;
             }
         }
-        d3.select(".check-input").text("Found matching states.");
+        d3.select(".check-input").text("Matching states.");
     }
     if (tableItem === 3)
     {
-        // Check if input is already in the table
+        
         let tempTable = document.getElementsByTagName("table")[0];
         for (let i = 1; i < tempTable.rows.length; i++)
         {
             if (tempTable.rows.item(i).cells.item(3).innerHTML === inputSearch)
             {
-                console.log("UFO sighting(s) already in table!")
+                console.log("Already In Table!")
                 return;
             }
         }
-        // Loops through table data and appends new rows if the data date matches the input
+        
         for (let i = 0; i < tableData.length; i++)
         {
             if (tableData[i].country === inputSearch)
@@ -300,21 +308,21 @@ submit.on("click", function()
                 cell6.innerHTML = tableData[i].comments;
             }
         }
-        d3.select(".check-input").text("Found matching countries.");
+        d3.select(".check-input").text("Matching countries.");
     }
     if (tableItem === 4)
     {
-        // Check if input is already in the table
+        
         let tempTable = document.getElementsByTagName("table")[0];
         for (let i = 1; i < tempTable.rows.length; i++)
         {
             if (tempTable.rows.item(i).cells.item(4).innerHTML === inputSearch)
             {
-                console.log("UFO sighting(s) already in table!")
+                console.log("Already In Table!")
                 return;
             }
         }
-        // Loops through table data and appends new rows if the data date matches the input
+        
         for (let i = 0; i < tableData.length; i++)
         {
             if (tableData[i].shape === inputSearch)
@@ -339,6 +347,6 @@ submit.on("click", function()
                 cell6.innerHTML = tableData[i].comments;
             }
         }
-        d3.select(".check-input").text("Found matching shapes.");
+        d3.select(".check-input").text("Matching shapes.");
     }
 });
