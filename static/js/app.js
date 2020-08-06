@@ -1,6 +1,6 @@
 let tableData = data;
 
-d3.select("#myBtn").style("background-color", `#008CBA`);
+d3.select("button").style("background-color", `#008CBA`);
 
 let tableItem = -1;
 
@@ -99,7 +99,7 @@ for (let i = 0; i < tableData.length; i++)
 setSearch = false;
  
 
-let submit = d3.select("#myBtn");
+let submit = d3.select("button");
 submit.on("click", function()
 {
     d3.event.preventDefault();
