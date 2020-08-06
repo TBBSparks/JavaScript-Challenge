@@ -16,8 +16,8 @@ dropdown_click.on("click", function()
 {
     d3.select("input").attr("placeholder", "Enter a date");
     d3.select(".form-control").property("value", "");
-    dropdown_click.style("background-color", "#DF691A");
-    dropdown_click2.style("background-color", "transparent");
+    dropdown_click.style("background-color", "transparent");
+    dropdown_click2.style("background-color", "#008CBA");
     d3.select("#dropdownMenuButton").style("background-color", "#008CBA");
     d3.select(".check-input").text("");
     tableItem = 0;
