@@ -4,5 +4,5 @@ Dashboard created through Javascript, HTML and CSS that allows users to search t
 
 JavaScript and DOM Manipulation
 
-*Using Dataset: UFO Sightings Data
+*Using Dataset: UFO Sightings Data*
 
